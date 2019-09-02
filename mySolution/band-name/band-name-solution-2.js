@@ -8,6 +8,7 @@ console.log(generateBandName("RED", "cookies"));
 // Some examples without console.log()
 generateBandName("blue", "ciabaTTas");
 generateBandName("purple", "PASTA");
+generateBandName("white", "haggis");
 
 // Show contents of the array
 console.log(bandNames);
