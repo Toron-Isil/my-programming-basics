@@ -1,105 +1,67 @@
-// Declare a place to store results
+// Band name solution 2.1 (refactored to store results in an array)
+// See notes at the end for further reading
+
+// For this exercise we're storing results in a global variable.
+// In another situation, this could be a database for example.
 const bandNames = [];
 
-// Some examples with console.log()
-console.log(generateBandName("blACK", "spAGhetti"));
-console.log(generateBandName("RED", "cookies"));
-
-// Some examples without console.log()
-generateBandName("blue", "ciabaTTas");
-generateBandName("purple", "PASTA");
-generateBandName("white", "haggis");
-
-// Show contents of the array
-console.log(bandNames);
-
-// Test yourself: Can you explain why we are able to
-// call generateBandName before we declare it? [The function is hoistable.]
-// For a refresher, see comments in the previous version of this file.
 
 /**
  * Generate a band name based on the user's clothing color
  * and the last food they ate
- *
+ * 
  * Store the result of each call in a global array,
  * then return it.
- *
- * @param {string} clothingColor
+ * 
+ * @param {string} clothingColor 
  * @param {string} lastFoodEaten
- *
+ * 
  * @return {string} bandName
- *
+ * 
  * @example
- *
+ * 
  *  generateBandName('RED', 'cookies')
  */
 
 function generateBandName(clothingColor, lastFoodEaten) {
-  let bandName = "";
+  // declare the return variable and indicate its type
+  let bandName = '';
 
-  // To keep things DRY, let's use just one function that does a very general job
-  let color = makeTasty(capitalizeInitial(clothingColor));
-  let food = capitalizeInitial(lastFoodEaten);
+  // format the input data and store it for later
+  let color = clothingColor[0].toUpperCase();
+  color += clothingColor.substr(1).toLowerCase();
+
+  let food = lastFoodEaten[0].toUpperCase();
+  food += lastFoodEaten.substr(1).toLowerCase();
 
   // use the formatted inputs to build the return value
   bandName = `The ${color} ${food}!`;
 
-  // update the global array
   bandNames.push(bandName);
-
-  // Test yourself: To where does this value get returned?
+  
+  // keep the return line short and sweet
   return bandName;
 }
 
-function capitalizeInitial(rawString) {
-  // Test yourself: To where does this value get returned?
-  return rawString[0].toUpperCase() + rawString.substr(1).toLowerCase();
-}
+// Since the function returns a string, we can log it to the console
+console.log(generateBandName('blACK', 'spAGhetti'));
+console.log(generateBandName('RED', 'cookies'));
 
-/**
- * Make a boring color delicious!
- *
- * @param {string} color
- * @return {string} tastyColor
- *
- * @example
- *
- *  makeTasty('Red')
- */
-function makeTasty(color) {
-  let tastyColor = "";
+// But since it has the 'side effect' of saving to a global variable,
+// We could also just call it without console.log()
+// The result would still be pushed onto the bandNames array
+generateBandName('blue', 'ciabaTTas');
+generateBandName('purple', 'PASTA');
 
-  switch (color) {
-    case "Red":
-      tastyColor = "Chilli";
-      break;
-    case "Orange":
-      tastyColor = "Tangerine";
-      break;
-    case "Yellow":
-      tastyColor = "Pineapple";
-      break;
-    case "Green":
-      tastyColor = "Sage";
-      break;
-    case "Blue":
-      tastyColor = "Blueberry";
-      break;
-    case "Purple":
-      tastyColor = "Plum";
-      break;
-    case "White":
-      tastyColor = "Heavenly";
-      break;
-    case "Gray":
-      tastyColor = "Cloudy";
-      break;
-    case "Black":
-      tastyColor = "Gothic";
-      break;
-    default:
-      tastyColor = color;
-  }
+// Notice that we can make multiple calls,
+// and the global variable will remember the old data.
+console.log(bandNames);
 
-  return tastyColor;
-}
+// Know your functions:
+// Since this function has a 'side effect', we say that it's an 'impure function'.
+// A 'pure function' would just return something without affecting anything outside itself.
+// Both kinds of function are useful at different times.
+// It's useful to be able to tell them apart.
+
+// Here's an article with more detail on pure functions
+// https://www.freecodecamp.org/news/what-is-a-pure-function-in-javascript-acb887375dfe/
