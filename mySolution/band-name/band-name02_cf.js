@@ -1,20 +1,65 @@
-console.log(bandName("black", "kiwis"));
+const bandNames = [];
 
-function bandName(clothingColor, lastFood) {
-  // var bigColor =
-  //   clothingColor.charAt(0).toUpperCase() +
-  //   clothingColor.substr(1).toLowerCase();
+console.log(generateBandName("reD", "kiwis"));
+console.log(generateBandName("YellOw", "Chicken"));
 
-  const bigColor = function() {
+function generateBandName(clothingColor, lastFood) {
+  let bandName = "";
+
+  let bigColor = function() {
     return (
-      clothingColor[0].toUpperCase() + clothingColor.substr(1).toLowerCase()
+      makeTasty(clothingColor[0].toUpperCase()) +
+      makeTasty(clothingColor.substr(1).toLowerCase())
     );
   };
+
   const bigFood = function() {
     return lastFood[0].toUpperCase() + lastFood.substr(1).toLowerCase();
   };
-  return `Da ${bigColor()} ${bigFood()}`;
+
+  bandName = `Da ${bigColor()} ${bigFood()}!`;
+
+  bandNames.push(bandName);
+
+  return bandName;
 }
 
-// console.log(bandName("red", "bread"));
-console.log(bandName("plaid", "tarantulas"));
+function makeTasty(bigColor) {
+  let tastyColor = "";
+
+  switch (bigColor) {
+    case "Red":
+      tastyColor = "Chilli";
+      break;
+    case "Orange":
+      tastyColor = "Tangerine";
+      break;
+    case "Yellow":
+      tastyColor = "Pineapple";
+      break;
+    case "Green":
+      tastyColor = "Sage";
+      break;
+    case "Blue":
+      tastyColor = "Blueberry";
+      break;
+    case "Purple":
+      tastyColor = "Plum";
+      break;
+    case "White":
+      tastyColor = "Heavenly";
+      break;
+    case "Gray":
+      tastyColor = "Cloudy";
+      break;
+    case "Black":
+      tastyColor = "Gothic";
+      break;
+    default:
+      tastyColor = bigColor;
+  }
+
+  return tastyColor;
+}
+
+console.log(generateBandName("blUe", "tarantulas"));
