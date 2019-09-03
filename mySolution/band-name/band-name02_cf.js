@@ -7,9 +7,8 @@ function generateBandName(clothingColor, lastFood) {
   let bandName = "";
 
   let bigColor = function() {
-    return (
-      makeTasty(clothingColor[0].toUpperCase()) +
-      makeTasty(clothingColor.substr(1).toLowerCase())
+    return makeTasty(
+      clothingColor[0].toUpperCase() + clothingColor.substr(1).toLowerCase()
     );
   };
 
@@ -24,10 +23,10 @@ function generateBandName(clothingColor, lastFood) {
   return bandName;
 }
 
-function makeTasty(bigColor) {
+function makeTasty(color) {
   let tastyColor = "";
 
-  switch (bigColor) {
+  switch (color) {
     case "Red":
       tastyColor = "Chilli";
       break;
