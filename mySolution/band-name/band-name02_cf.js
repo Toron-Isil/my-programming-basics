@@ -7,13 +7,11 @@ function generateBandName(clothingColor, lastFood) {
   let bandName = "";
 
   let bigColor = function() {
-    return makeTasty(
-      clothingColor[0].toUpperCase() + clothingColor.substr(1).toLowerCase()
-    );
+    return makeTasty(capitalizeInitial(clothingColor));
   };
 
   const bigFood = function() {
-    return lastFood[0].toUpperCase() + lastFood.substr(1).toLowerCase();
+    return capitalizeInitial(lastFood);
   };
 
   bandName = `Da ${bigColor()} ${bigFood()}!`;
@@ -21,6 +19,10 @@ function generateBandName(clothingColor, lastFood) {
   bandNames.push(bandName);
 
   return bandName;
+}
+
+function capitalizeInitial(rawString) {
+  return rawString[0].toUpperCase() + rawString.substr(1).toLowerCase();
 }
 
 function makeTasty(color) {
