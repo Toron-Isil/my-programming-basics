@@ -21,19 +21,6 @@
 console.log(getFortune());
 
 function getFortune() {
-  const jobs = [
-    "an assistant teacher",
-    "a teacher who teaches teachers",
-    "the village computer whisperer",
-    "a space raider",
-    "a camel herder for undercover superheroes",
-    "a mountaineer",
-    "a house servant for a robot",
-    "---pfft work? You've been devoting your life to your passion of miniature crochet"
-  ];
-
-  const job = randomElementPicker(jobs);
-
   const places = [
     "Berlin",
     "some tiny island paradise",
@@ -46,6 +33,19 @@ function getFortune() {
   ];
 
   const place = randomElementPicker(places);
+
+  const jobs = [
+    "an assistant teacher",
+    "a teacher who teaches teachers",
+    "the village computer whisperer",
+    "a space raider",
+    "a camel herder for undercover superheroes",
+    "a mountaineer",
+    "a house servant for a robot",
+    "---pfft work? You've been devoting your life to your passion of miniature crochet"
+  ];
+
+  const job = randomElementPicker(jobs);
 
   return `You'll be celebrating 100 000 GitHub stars on your side project, in the heart of ${place} where you've been working as ${job}!`;
 }
