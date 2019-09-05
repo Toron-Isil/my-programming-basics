@@ -1,3 +1,4 @@
+//
 // Oh no, the fortune teller got drunk and all the lines of code have been mixed up!
 
 // As the fortune teller's apprentice, it's up to you to
