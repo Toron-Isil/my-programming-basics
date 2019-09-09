@@ -11,10 +11,10 @@ function convertFromEur(amount, curr) {
   }
 }
 
-function getJpyFromEur(amount) {
+const getJpyFromEur = function (amount) {
   // 1 EUR = 116.402 JPY
-  const rate = 116.402;
-  return amount * rate;
+  // const rate = 116.402;
+  return (amount * 116402 / 1000).toFixed(2);
 }
 
 const getAudFromEur = function (amount) {
@@ -33,3 +33,8 @@ const getChfFromEur = amount => {
 
 
 console.log(convertFromEur(100, "AUD"));
+console.log(convertFromEur(100, "JPY"));
+console.log(convertFromEur(100, "CAD"));
+console.log(convertFromEur(100, "CHF"));
+
+
