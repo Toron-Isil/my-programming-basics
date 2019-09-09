@@ -33,7 +33,8 @@ function getFortune() {
     "the ruins of former Berlin"
   ];
 
-  
+  const place = randomElementPicker(places);
+
   const jobs = [
     "an assistant teacher",
     "a teacher who teaches teachers",
@@ -45,7 +46,6 @@ function getFortune() {
     "---pfft work? You've been devoting your life to your passion of miniature crochet"
   ];
 
-  const place = randomElementPicker(places);
   const job = randomElementPicker(jobs);
 
   return `You'll be celebrating 100 000 GitHub stars on your side project, in the heart of ${place} where you've been working as ${job}!`;

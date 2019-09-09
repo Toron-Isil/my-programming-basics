@@ -11,22 +11,25 @@ function convertFromEur(amount, curr) {
   }
 }
 
-function getJpyFromEur(jpyAmount) {
+function getJpyFromEur(amount) {
   // 1 EUR = 116.402 JPY
   const rate = 116.402;
-  return jpyAmount * rate;
+  return amount * rate;
 }
 
-function getAudFromEur(audAmount) {
+const getAudFromEur = function (amount) {
   // 1 EUR = 1.62072 AUD
   const rate = 1.62072;
-  return audAmount * rate;
+  return amount * rate;
 }
 
-function getChfFromEur(chfAmount) {
+const getChfFromEur = amount => {
   // 1 EUR = 1.08 CHF
   const rate = 1.08;
-  return chfAmount * rate;
+  return amount * rate;
 }
+
+
+
 
 console.log(convertFromEur(100, "AUD"));
