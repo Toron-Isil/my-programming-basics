@@ -38,7 +38,7 @@ function convertFromEur(amount, curr) {
 }
 
 function getJpyFromEur(amount) {
-  // 1 EUR = 116.402 JPY
+  // 1 EUR = 116.402 JPY * 1000 then / 1000
   const rate = 116402;
   return (amount * rate / 1000).toFixed(2);
 }
