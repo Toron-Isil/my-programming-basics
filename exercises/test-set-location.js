@@ -27,14 +27,14 @@ myLocation.get();           // output: Sydney
 console.log('_______________________'); /////////////
 // ----------------------------------------------- //
 
-function myFunction(x, y = 10) {
-  // y is 10 if not passed or undefined
-  return x + y;
-}
-console.log(myFunction(5)); // will return 15
+// function myFunction(x, y = 10) {
+//   // y is 10 if not passed or undefined
+//   return x + y;
+// }
+// console.log(myFunction(5)); // will return 15
 
-console.log('_______________________'); /////////////
-// ----------------------------------------------- //
+// console.log('_______________________'); /////////////
+// // ----------------------------------------------- //
 
 function buildContor(i) {
   var contor = i;
@@ -57,3 +57,48 @@ myOtherContor(); // 11
 
 // myContor was not affected 
 myContor(); // 4
+
+console.log('_______________________'); /////////////
+// ----------------------------------------------- //
+
+// version 1
+
+function b() {
+  var myVar;
+  console.log(myVar);
+}
+
+function a() {
+  var myVar = 2;
+  console.log(myVar);
+  b();
+}
+
+var myVar = 1;
+console.log(myVar);
+a();
+console.log(myVar);
+
+console.log('_______________________'); /////////////
+// ----------------------------------------------- //
+
+// version 2
+
+
+
+function a() {
+  var myVar = 2;
+  console.log(myVar);
+
+  function b() {
+    var myVar;
+    console.log(myVar);
+  }
+
+  b();
+}
+
+var myVar = 1;
+console.log(myVar);
+a();
+console.log(myVar);
