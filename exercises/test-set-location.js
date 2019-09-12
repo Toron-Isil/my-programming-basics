@@ -84,8 +84,6 @@ console.log('_______________________'); /////////////
 
 // version 2
 
-
-
 function a() {
   var myVar = 2;
   console.log(myVar);
@@ -102,3 +100,46 @@ var myVar = 1;
 console.log(myVar);
 a();
 console.log(myVar);
+
+
+console.log('_______________________'); /////////////
+// ----------------------------------------------- //
+
+function fullName(firstName, lastName, callback) {
+  console.log("My name is " + firstName + " " + lastName);
+  callback(lastName);
+}
+
+var greeting = function (ln) {
+  console.log('Welcome Mr. ' + ln);
+};
+
+fullName("Jackie", "Chan", greeting);
+
+console.log('_______________________'); /////////////
+// ----------------------------------------------- //
+
+function publish(item, author, callback) {   // Generic function with common data
+  console.log(item);
+  var date = new Date();
+
+  callback(author, date);
+}
+
+function messages(author, time) {   // Callback function with specific data
+  var sendTime = time.toLocaleTimeString();
+  console.log("Sent from " + author + " at " + sendTime);
+}
+
+function articles(author, date) {   // Callback function with specific data
+  var pubDate = date.toDateString();
+  console.log("Written by " + author);
+  console.log("Published " + pubDate);
+}
+
+publish("How are you?", "Monique", messages);
+
+publish("10 Tips for JavaScript Developers", "Jane Doe", articles);
+
+console.log('_______________________'); /////////////
+// ----------------------------------------------- //
