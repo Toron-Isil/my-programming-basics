@@ -1,33 +1,27 @@
-function init() {
-  var db = ['Mr. ', 'Ms. '];
-  console.log('***** init start *****');
-  console.log(db);
+const init = () => {
+  var db = [];
 
-  let create = () => {
-    console.log('  ***** create start ***** ');
-    newEntry = db.push('Yo Mama');
-    console.log('   ', db.length);
-    console.log('   ', db);
-    console.log('  ***** create ends ***** ');
-    return db;
+  let create = (newEntry) => {
+    // console.log('  ***** create start ***** ');
+    db.push(newEntry);
+
+    // console.log(db);
+
+    return db.length;
   }
-  console.log(db, 'after let create, before "create();"');
-  create();
-  console.log(db, 'after "create()"');
-  console.log('***** init ends!!');
-  return api = db;
+
+  var api = [];
+  console.log(api);
+  api.push(create);
+  console.log(api);
+
+  return api;
 }
 
 let createInDb = init();
 
-createInDb.push(('Sir '));
 
-console.log(createInDb[0], 'Smith');
-console.log(createInDb[1], 'Hubble!');
-console.log(createInDb[3], 'Conan Doyle!');
-console.log(createInDb[2], 'Franklin!');
-console.log(createInDb.length);
+createInDb[0]('Mr. ');
 
-console.log(api);
-createInDb[api.push('Siri ')];
-console.log(api, ' // push. Siri');
+console.log(createInDb[0]('Sir '));
+
