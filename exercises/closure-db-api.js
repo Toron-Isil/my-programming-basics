@@ -21,7 +21,7 @@ const init = () => {
       db[indexNo] = newEntry;
     } else {
       console.log(`  ERROR: There is no index '${indexNo}' in the database.`);
-      console.log(`  There was no entry update to '${newEntry}'.`);
+      console.log(`  There was no entry to update to '${newEntry}'.`);
       db.push(newEntry);
       return `  New element '${newEntry}' has been added!`;
     }
