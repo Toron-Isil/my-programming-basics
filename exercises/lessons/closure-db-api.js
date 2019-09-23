@@ -1,4 +1,4 @@
-const init = () => {
+const myMixedSalad = () => {
   const db = [];
   const api = [];
 
@@ -49,7 +49,7 @@ const init = () => {
   return api;
 };
 
-const api = init();
+const api = myMixedSalad();
 
 let createInDb = api[0];
 let readInDb = api[1];
