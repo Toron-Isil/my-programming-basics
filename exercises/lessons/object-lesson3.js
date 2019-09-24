@@ -59,3 +59,47 @@ addLanguage('arabian', { hello: "Marhaba" });
 addLanguage('gaeilge', { hello: "Dia duit" });
 
 console.log('\n', nestedObject.data.languages);
+
+// =======================
+/*
+adds: European country -> countries (inside continents , inside of countries object). 
+The country you add should be an object with the key as name of the country and the value as an object with the keys of “capital” and “population” and their respective values
+*/
+
+let addCountry = (country, capiPop) => {
+
+  nestedObject.data.continents.europe.countries[country] = capiPop;
+
+}
+
+console.log('\n', nestedObject.data.continents.europe.countries);
+
+addCountry('ireland', { capital: "Dublin", population: 4921500 });
+addCountry('austria', { capital: "Vienna", population: 8857960 });
+
+console.log('\n', nestedObject.data.continents.europe.countries);
+
+
+let addContinent = (continent, countries) => {
+
+  nestedObject.data.continents[continent] = countries;
+  // nestedObject.data.continents[continent].countries = country;
+}
+
+// ===================================
+
+let addAsiaCountry = (country, AsiCapiPop) => {
+
+  nestedObject.data.continents.asia.countries[country] = AsiCapiPop;
+
+}
+
+// ===================================
+addContinent('asia', { countries: {} });
+console.log('\n Continents:', nestedObject.data.continents);
+
+addAsiaCountry('japan', { capital: "tokyo", population: 126317000 });
+
+console.log('\n Continents:', nestedObject.data.continents);
+
+console.log('\n', nestedObject.data.continents.asia.countries);
