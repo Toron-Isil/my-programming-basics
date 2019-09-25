@@ -34,8 +34,7 @@ var nestedObject = {
 let addSpeacker = (nameSpeaker) => {
   atIdx = nestedObject.speakers.length;
   nestedObject.speakers[atIdx] = { name: nameSpeaker };
-  // nestedObject.speakers[nestedObject.speakers.length] = { name: "Kato" };
-}
+};
 
 console.log('\n', nestedObject.speakers);
 addSpeacker("Kato");
@@ -103,5 +102,28 @@ addAsiaCountry('japan', "tokyo", 126317000);
 
 console.log('\n Continents:', nestedObject.data.continents);
 
-console.log('\n Europe:', nestedObject.data.continents.europe.countries);
-console.log(' Asia:', nestedObject.data.continents.asia.countries, '\n');
+
+console.log('\n Europe:', nestedObject.data.continents.europe.countries, '\n');
+console.log(' Asia:', nestedObject.data.continents.asia.countries);
+
+// =================================================================
+
+console.log('\n ========================================================= \n');
+console.log('Array.isArray (nestedObject.speakers) = ', Array.isArray(nestedObject.speakers));
+console.log('Array.isArray(nestedObject.data.continents.europe.countries) = ', Array.isArray(nestedObject.data.continents.europe.countries), '\n');
+
+function isArrayConstructor(objToCheck) {
+  return Boolean(objToCheck) && objToCheck.constructor === Array;
+}
+let shortyCountries = nestedObject.data.continents.europe.countries;
+
+console.log('\t \t isArrayConstructor:')
+console.log('nestedObject.speakers) \t \t= ', isArrayConstructor(nestedObject.speakers));
+console.log('nestedObject. (...) .countries) = ', isArrayConstructor(shortyCountries));
+
+function isArrayInstanceOf(objToCheck) {
+  return objToCheck instanceof Array;
+}
+console.log('\n \t \t isArrayInstanceOf:')
+console.log('nestedObject.speakers) \t \t =', isArrayInstanceOf(nestedObject.speakers));
+console.log('nestedObject. (...) .countries) = ', isArrayInstanceOf(shortyCountries));

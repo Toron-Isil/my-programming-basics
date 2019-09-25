@@ -71,3 +71,22 @@ obj.subtract = 8;
 
 console.log(obj.counter);
 // console.log(Math.floor(obj.counter));  // using  Math.floor() on the output
+
+// ==========================================
+console.log('\n ==========================================');
+
+console.log('\n Target and Source \n');
+
+const target = {
+  name: 'Ali',
+  age: 30,
+  language: 'arabian'
+};
+const source = {
+  name: 'Olga',
+  city: 'Berlin'
+}
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(returnedTarget);
