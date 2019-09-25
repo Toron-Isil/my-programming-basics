@@ -31,32 +31,32 @@ var nestedObject = {
   }
 }
 
-let addSpeacker = (name) => {
+let addSpeacker = (nameSpeaker) => {
   atIdx = nestedObject.speakers.length;
-  nestedObject.speakers[atIdx] = name;
+  nestedObject.speakers[atIdx] = { name: nameSpeaker };
   // nestedObject.speakers[nestedObject.speakers.length] = { name: "Kato" };
 }
 
 console.log('\n', nestedObject.speakers);
-addSpeacker({ name: "Kato" });
-addSpeacker({ name: "Bashira" });
-addSpeacker({ name: "Naomi" });
+addSpeacker("Kato");
+addSpeacker("Bashira");
+addSpeacker("Naomi");
 
 console.log('\n', nestedObject.speakers);
 
 // Languages
 
-let addLanguage = (lang, hello) => {
+let addLanguage = (lang, helloLang) => {
   // testphase
 
-  nestedObject.data.languages[lang] = hello;
+  nestedObject.data.languages[lang] = { hello: helloLang };
 
 }
 console.log('\n', nestedObject.data.languages);
 
-addLanguage('japanese', { hello: "Konichi wa" });
-addLanguage('arabian', { hello: "Marhaba" });
-addLanguage('gaeilge', { hello: "Dia duit" });
+addLanguage('japanese', "Konichi wa");
+addLanguage('arabian', "Marhaba");
+addLanguage('gaeilge', "Dia duit");
 
 console.log('\n', nestedObject.data.languages);
 
@@ -66,40 +66,42 @@ adds: European country -> countries (inside continents , inside of countries obj
 The country you add should be an object with the key as name of the country and the value as an object with the keys of “capital” and “population” and their respective values
 */
 
-let addCountry = (country, capiPop) => {
+let addCountry = (country, capi, Pop) => {
 
-  nestedObject.data.continents.europe.countries[country] = capiPop;
+  nestedObject.data.continents.europe.countries[country] = { capital: capi, population: Pop };
 
 }
 
 console.log('\n', nestedObject.data.continents.europe.countries);
 
-addCountry('ireland', { capital: "Dublin", population: 4921500 });
-addCountry('austria', { capital: "Vienna", population: 8857960 });
+addCountry('ireland', "Dublin", 4921500);
+addCountry('austria', "Vienna", 8857960);
 
 console.log('\n', nestedObject.data.continents.europe.countries);
 
 
 let addContinent = (continent, countries) => {
 
-  nestedObject.data.continents[continent] = countries;
+  nestedObject.data.continents[continent] = { countries: countries };
   // nestedObject.data.continents[continent].countries = country;
 }
 
 // ===================================
 
-let addAsiaCountry = (country, AsiCapiPop) => {
+let addAsiaCountry = (country, AsiCapi, AsiPop) => {
 
-  nestedObject.data.continents.asia.countries[country] = AsiCapiPop;
+  nestedObject.data.continents.asia.countries[country] = { capital: AsiCapi, population: AsiPop };
 
 }
 
 // ===================================
-addContinent('asia', { countries: {} });
+
+addContinent('asia', {});
 console.log('\n Continents:', nestedObject.data.continents);
 
-addAsiaCountry('japan', { capital: "tokyo", population: 126317000 });
+addAsiaCountry('japan', "tokyo", 126317000);
 
 console.log('\n Continents:', nestedObject.data.continents);
 
-console.log('\n', nestedObject.data.continents.asia.countries, '\n');
+console.log('\n Europe:', nestedObject.data.continents.europe.countries);
+console.log(' Asia:', nestedObject.data.continents.asia.countries, '\n');
