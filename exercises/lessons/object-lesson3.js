@@ -102,4 +102,4 @@ addAsiaCountry('japan', { capital: "tokyo", population: 126317000 });
 
 console.log('\n Continents:', nestedObject.data.continents);
 
-console.log('\n', nestedObject.data.continents.asia.countries);
+console.log('\n', nestedObject.data.continents.asia.countries, '\n');
