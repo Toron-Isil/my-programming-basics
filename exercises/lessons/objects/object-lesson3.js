@@ -5,8 +5,6 @@
 
 */
 
-
-
 var nestedObject = {
   speakers: [{ name: "Elie" }, { name: "Tim" }, { name: "Matt" }],
   data: {
@@ -29,7 +27,7 @@ var nestedObject = {
       }
     }
   }
-}
+};
 
 let addSpeacker = (nameSpeaker) => {
   atIdx = nestedObject.speakers.length;
@@ -50,7 +48,8 @@ let addLanguage = (lang, helloLang) => {
 
   nestedObject.data.languages[lang] = { hello: helloLang };
 
-}
+};
+
 console.log('\n', nestedObject.data.languages);
 
 addLanguage('japanese', "Konichi wa");
@@ -69,7 +68,7 @@ let addCountry = (country, capi, Pop) => {
 
   nestedObject.data.continents.europe.countries[country] = { capital: capi, population: Pop };
 
-}
+};
 
 console.log('\n', nestedObject.data.continents.europe.countries);
 
@@ -83,7 +82,7 @@ let addContinent = (continent, countries) => {
 
   nestedObject.data.continents[continent] = { countries: countries };
   // nestedObject.data.continents[continent].countries = country;
-}
+};
 
 // ===================================
 
@@ -91,7 +90,7 @@ let addAsiaCountry = (country, AsiCapi, AsiPop) => {
 
   nestedObject.data.continents.asia.countries[country] = { capital: AsiCapi, population: AsiPop };
 
-}
+};
 
 // ===================================
 
