@@ -54,26 +54,17 @@ const exerciseThree = function () {
 
   function objectToArray(obj) {
 
-    console.log(typeof obj);
-    console.log('--------------')
-    console.log(typeof Object.keys(obj));
+    let myNewArray = Object.keys(obj);
+    console.log(myNewArray);
 
-    const objToArray = Object.keys(obj);
-    const objLength = objToArray.length;
-    console.log(objLength);
+    myNewArray = myNewArray.map(key => {
+      let newItem = [key, obj[key]]
+      console.log(newItem)
+      return newItem;
+    })
+    console.log(myNewArray);
 
-    let string1 = "";
-
-    for (const property1 in objToArray) {
-
-      string1 += ' ' + objToArray[property1];
-
-    }
-
-    console.log(string1);
-
-    console.log(typeof objToArray);
-    return objToArray;
+    return myNewArray;
   }
 
   // examples: 
@@ -83,13 +74,39 @@ const exerciseThree = function () {
     C: 3
   }); // [["D", 1], ["B", 2], ["C", 3]]
 
-
-
   objectToArray({
     likes: 2,
     dislikes: 3,
     followers: 10
   }) // [["likes", 2], ["dislikes", 3], ["followers", 10]]
+
+  console.log('*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*')
+  console.log('Keys and Values');
+  function keysAndValues(obj) {
+
+    let myNewArray = Object.keys(obj);
+    console.log(myNewArray);
+
+    myNewArray = myNewArray.map(key => {
+      let newItem = [obj[key]]
+      console.log(newItem)
+      return newItem;
+    })
+
+    console.log(myNewArray);
+
+    return myNewArray;
+  }
+
+  keysAndValues({ a: 1, b: 2, c: 3 })
+  // [["a", "b", "c"], [1, 2, 3]]
+
+  keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" })
+  // [["a", "b", "c"], ["Apple", "Microsoft", "Google"]]
+
+  keysAndValues({ key1: true, key2: false, key3: undefined })
+  // [["key1", "key2", "key3"], [true, false, undefined]]
+
 
 
 };
