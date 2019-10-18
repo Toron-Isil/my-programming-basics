@@ -32,7 +32,7 @@ const bubbleSort = nums => {
         nums[j] = temp;
 
         swaps += 1;
-        console.log(`swapped ${nums[j]} and ${nums[j + 1]}!`);
+        // console.log(`swapped ${nums[j]} and ${nums[j + 1]}!`);
       }
     }
   } while (swaps > 0);
