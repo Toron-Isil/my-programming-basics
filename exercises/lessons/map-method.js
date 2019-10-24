@@ -8,12 +8,10 @@
 // Here's our source array
 const people = ['Mario', 'Luigi', 'Peach'];
 
-// Here's the new array we're aiming for
-//             ['MARIO', 'LUIGI', 'PEACH'];
+// Here's the new array we're aiming for = >>  ['MARIO', 'LUIGI', 'PEACH'];
 
-/**
- * 1. for loop
-*/
+
+/////  1. for loop
 
 console.log('\n1. for loop')
 
@@ -26,9 +24,8 @@ for (let i = 0; i < people.length; i++) {
 console.log(forResult);
 
 
-/**
- * 2. for... of loop
-*/
+/////  2. for... of loop
+
 
 forOfResult = [];
 

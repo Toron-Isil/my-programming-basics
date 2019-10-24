@@ -80,7 +80,7 @@ const two = outerArray => {
     let arrayValue = outerArray.toString();
     // console.log('arrayValue: ', arrayValue);
     let splitOutput = arrayValue.split(',');
-    let newLineValue = splitOutput.join('\n')
+    let newLineValue = splitOutput.join('\n');
     console.log(newLineValue);
 };
 
@@ -139,7 +139,7 @@ const four = city => {
 
     if (city.substring(0, 3) === 'Los' || city.substring(0, 3) === 'New') {
         return city;
-    }  // no mor else necessary 
+    }  // no more else necessary 
 
     return 'The city name does not begin with Los or New';
 

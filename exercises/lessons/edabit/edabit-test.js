@@ -148,3 +148,32 @@ const exerciseFour = function () {
 };
 
 exerciseFour();
+
+
+// Edabit -> Higher Order Functions
+//  Exists a Number Higher?
+// existsHigher([5, 3, 15, 22, 4], 10) ➞ true
+// existsHigher([1, 2, 3, 4, 5], 8) ➞ false
+// existsHigher([4, 3, 3, 3, 2, 2, 2], 4) ➞ true
+// existsHigher([], 5) ➞ false
+
+const exerciseHigherOrder = function () {
+  //////// - code under this line - ////////
+
+  function existsHigher(arr, n) {
+
+    let result = arr.some(element => element >= n)
+    console.log('Array is: ', arr, 'n is: ', n, 'result: ', result);
+    return result;
+  }
+
+  //                             arr        ,  n
+  console.log(existsHigher([5, 3, 15, 22, 4], 10));
+  console.log(existsHigher([1, 2, 3, 4, 5], 8));
+  console.log(existsHigher([4, 3, 3, 3, 2, 2, 2], 4));
+  console.log(existsHigher([], 5));
+
+
+};
+
+exerciseHigherOrder();
